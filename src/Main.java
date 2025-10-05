@@ -13,6 +13,8 @@ public class Main {
 
         ArrayList<Card> cards = testDeck.getCards();
 
+        testDeck.shuffle();
+
         for (Card card : cards) {
             System.out.println(card.getRank() + " of " + card.getSuit());
         }
