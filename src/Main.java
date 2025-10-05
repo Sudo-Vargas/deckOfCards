@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
 
 
@@ -8,6 +10,12 @@ public class Main {
         // testCard.printCard();
 
         Deck testDeck = new Deck();
+
+        ArrayList<Card> cards = testDeck.getCards();
+
+        for (Card card : cards) {
+            System.out.println(card.getRank() + " of " + card.getSuit());
+        }
 
     }
 
