@@ -1,9 +1,7 @@
 public class Card {
 
-    // variables
-    // TODO make rank variable int?
+    // declare rank and suit variables
     String rank;
-    // TODO make suit variable String
     String suit;
 
     // methods
@@ -11,8 +9,8 @@ public class Card {
 
     // constructor method to make cards
     public Card(String rank, String suit){
-
+        this.rank = rank;
+        this.suit = suit;
     }
-
 
 }
