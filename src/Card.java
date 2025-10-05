@@ -13,4 +13,8 @@ public class Card {
         this.suit = suit;
     }
 
+    public void printCard(){
+        System.out.println("Hello I am a card! my rank is " + this.rank + "." + " my suit is " + this.suit);
+    }
+
 }

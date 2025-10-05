@@ -9,4 +9,16 @@ public class Deck {
     // TODO make method to deal a card
     // TODO make method to shuffle deck
 
+    public Deck() {
+
+        for (String rank : ranks) {
+            System.out.println(rank);
+
+        }
+
+    }
+
+
+
+
 }
