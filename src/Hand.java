@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+
 public class Hand {
-
-    // TODO make arraylist to hold the cards for the hand
-
     // TODO override toString? (method)
 
+    private ArrayList<Card> hand;
+
+
+    public Hand (){
+        hand = new ArrayList<>();
+    }
 }

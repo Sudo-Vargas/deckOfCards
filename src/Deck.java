@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class Deck {
 
-    // arrays to make cards with
+    // arrays to make deck with
     String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
@@ -15,13 +15,14 @@ public class Deck {
     // TODO make method to deal a card
     // TODO make method to shuffle deck
 
-    private ArrayList<Card> cards;
+    private ArrayList<Card> deck;
+
 
 
     public Deck() {
 
-        //ArrayList<Card> cards = new ArrayList<>();
-        cards = new ArrayList<>();
+        //ArrayList<Card> deck = new ArrayList<>();
+        deck = new ArrayList<>();
 
         for (String suit : suits) {
 
@@ -29,24 +30,25 @@ public class Deck {
 
                 Card card = new Card(rank, suit);
 
-                cards.add(card);
+                deck.add(card);
 
 
                 // card.printCard();
-                // System.out.println(cards.size());
+                // System.out.println(deck.size());
                 // System.out.printf(rank , suit);
             }
 
         }
     }
 
-    // getter method to allow main to access cards in the array
-    public ArrayList<Card> getCards() {
-        return cards;
+    // getter method to allow main to access deck in the array
+    public ArrayList<Card> getDeck() {
+        return deck;
     }
 
     public void shuffle(){
-        Collections.shuffle(cards);
+        Collections.shuffle(deck);
     }
+
 
 }

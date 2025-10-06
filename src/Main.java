@@ -11,11 +11,11 @@ public class Main {
 
         Deck testDeck = new Deck();
 
-        ArrayList<Card> cards = testDeck.getCards();
+        ArrayList<Card> deck = testDeck.getDeck();
 
         testDeck.shuffle();
 
-        for (Card card : cards) {
+        for (Card card : deck) {
             System.out.println(card.getRank() + " of " + card.getSuit());
         }
 
