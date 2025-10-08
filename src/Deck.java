@@ -13,7 +13,6 @@ public class Deck {
     // methods
     // TODO make method to deal hand
     // TODO make method to deal a card
-    // TODO make method to shuffle deck
 
     private ArrayList<Card> deck;
 
@@ -32,6 +31,7 @@ public class Deck {
 
                 deck.add(card);
 
+                deck.remove(card);
 
                 // card.printCard();
                 // System.out.println(deck.size());
@@ -39,7 +39,10 @@ public class Deck {
             }
 
         }
+
+
     }
+
 
     // getter method to allow main to access deck in the array
     public ArrayList<Card> getDeck() {
