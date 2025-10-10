@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class Deck {
 
-    // arrays to make deck with
+    // arrays to construct deck
     String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
@@ -15,8 +15,6 @@ public class Deck {
     // TODO make method to deal a card
 
     private ArrayList<Card> deck;
-
-
 
     public Deck() {
 
@@ -31,17 +29,37 @@ public class Deck {
 
                 deck.add(card);
 
-                deck.remove(card);
-
-                // card.printCard();
-                // System.out.println(deck.size());
-                // System.out.printf(rank , suit);
             }
 
         }
 
-
     }
+
+
+
+
+
+
+
+
+
+
+    public Hand dealHand(int numCards){
+
+        Hand hand  = new Hand();
+
+        for (int i = 0; i < numCards; i++){
+            Card card = deck.removeFirst();
+
+            hand.addCard(card);
+
+
+        }
+
+        return hand;
+    }
+
+
 
 
     // getter method to allow main to access deck in the array
@@ -52,6 +70,5 @@ public class Deck {
     public void shuffle(){
         Collections.shuffle(deck);
     }
-
 
 }

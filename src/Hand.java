@@ -9,4 +9,14 @@ public class Hand {
     public Hand (){
         hand = new ArrayList<>();
     }
+
+    // getter method to allow other classes to access hand
+    public ArrayList<Card> getHand(){
+        return hand;
+    }
+
+    public void addCard(Card card){
+        hand.add(card);
+    }
+
 }
