@@ -1,6 +1,7 @@
 // import arraylist to use for deck
 
 import java.util.ArrayList;
+// import collections for the shuffle method
 import java.util.Collections;
 
 
@@ -10,12 +11,10 @@ public class Deck {
     String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
-    // methods
-    // TODO make method to deal hand
-    // TODO make method to deal a card
 
     private ArrayList<Card> deck;
 
+    // constructor method to make a deck
     public Deck() {
 
         //ArrayList<Card> deck = new ArrayList<>();
@@ -35,20 +34,12 @@ public class Deck {
 
     }
 
+    // method to deal a hand of numCards size
+    public Hand dealHand(int numCards) {
 
+        Hand hand = new Hand();
 
-
-
-
-
-
-
-
-    public Hand dealHand(int numCards){
-
-        Hand hand  = new Hand();
-
-        for (int i = 0; i < numCards; i++){
+        for (int i = 0; i < numCards; i++) {
             Card card = deck.removeFirst();
 
             hand.addCard(card);
@@ -60,14 +51,13 @@ public class Deck {
     }
 
 
-
-
     // getter method to allow main to access deck in the array
     public ArrayList<Card> getDeck() {
         return deck;
     }
 
-    public void shuffle(){
+    // method to shuffle the deck
+    public void shuffle() {
         Collections.shuffle(deck);
     }
 

@@ -4,7 +4,6 @@ public class Card {
     String rank;
     String suit;
 
-    // TODO override toString? (method)
 
     // constructor method to make cards
     public Card(String rank, String suit) {
