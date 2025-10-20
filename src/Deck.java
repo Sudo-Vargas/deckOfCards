@@ -1,6 +1,6 @@
 // import arraylist to use for deck
-
 import java.util.ArrayList;
+
 // import collections for the shuffle method
 import java.util.Collections;
 
@@ -50,11 +50,12 @@ public class Deck {
         return hand;
     }
 
-
+    /*
     // getter method to allow main to access deck in the array
     public ArrayList<Card> getDeck() {
         return deck;
     }
+    */
 
     // method to shuffle the deck
     public void shuffle() {
