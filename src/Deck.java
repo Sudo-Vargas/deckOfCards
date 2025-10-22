@@ -16,9 +16,9 @@ public class Deck {
     String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 
     // create hashmap for card values
-    private HashMap<String, Integer> cardValues = new HashMap<>();
+    private final HashMap<String, Integer> cardValues = new HashMap<>();
 
-    private ArrayList<Card> deck;
+    private final ArrayList<Card> deck;
 
     // constructor method to make a deck
     public Deck() {
@@ -71,13 +71,6 @@ public class Deck {
 
         return hand;
     }
-
-    /*
-    // getter method to allow main to access deck in the array
-    public ArrayList<Card> getDeck() {
-        return deck;
-    }
-    */
 
     // test method to print cardValues hashmap
     public void printValue() {

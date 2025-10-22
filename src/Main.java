@@ -11,14 +11,14 @@ public class Main {
         // create a new scanner
         Scanner scanner = new Scanner(System.in);
 
-        // gets the deck arraylist from the deck getter method.
-        // ArrayList<Card> deck = testDeck.getDeck();
-
         // shuffle the deck before dealing the hand
         deck.shuffle();
 
-        //deals the hand with numCards size
-        Hand testHand = deck.dealHand(2);
+        //deals the players hand with handSize size
+        Hand playerHand = deck.dealHand(2);
+
+        //deals the dealers hand with handSize size
+        Hand dealerHand = deck.dealHand(2);
 
         // this method prints each card in the deck. used for testing.
         /*
@@ -28,17 +28,24 @@ public class Main {
         */
 
         // gets the hand arraylist from the hand class with the getter method.
-        ArrayList<Card> hand = testHand.getHand();
+        ArrayList<Card> phand = playerHand.getHand();
+        ArrayList<Card> dhand = dealerHand.getHand();
 
+        // logic to print player hand
         System.out.println("Your hand is:");
-
-        // for loop to print each card in hand
-        for (Card card : hand) {
+        for (Card card : phand) {
             System.out.println(card.getRank() + " of " + card.getSuit());
         }
 
+        // logic to print dealer hand
+        System.out.println("The dealer's hand is:");
+        for (Card card : dhand) {
+            System.out.println(card.getRank() + " of " + card.getSuit());
+        }
+
+
         // test method to print the cardValue hashmap
-        deck.printValue();
+        // deck.printValue();
     }
 
 }

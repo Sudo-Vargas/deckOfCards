@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Hand {
 
-    private ArrayList<Card> hand;
+    private final ArrayList<Card> hand;
 
     // constructor method to make a hand
     public Hand() {
