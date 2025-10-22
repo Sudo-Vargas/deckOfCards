@@ -56,12 +56,12 @@ public class Deck {
 
     }
 
-    // method to deal a hand of numCards size
-    public Hand dealHand(int numCards) {
+    // method to deal a hand of handSize size
+    public Hand dealHand(int handSize) {
 
         Hand hand = new Hand();
 
-        for (int i = 0; i < numCards; i++) {
+        for (int i = 0; i < handSize; i++) {
             Card card = deck.removeFirst();
 
             hand.addCard(card);

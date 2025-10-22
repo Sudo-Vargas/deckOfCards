@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         // creates a new deck object
-        Deck testDeck = new Deck();
+        Deck deck = new Deck();
 
         // create a new scanner
         Scanner scanner = new Scanner(System.in);
@@ -15,10 +15,10 @@ public class Main {
         // ArrayList<Card> deck = testDeck.getDeck();
 
         // shuffle the deck before dealing the hand
-        testDeck.shuffle();
+        deck.shuffle();
 
         //deals the hand with numCards size
-        Hand testHand = testDeck.dealHand(2);
+        Hand testHand = deck.dealHand(2);
 
         // this method prints each card in the deck. used for testing.
         /*
@@ -38,7 +38,7 @@ public class Main {
         }
 
         // test method to print the cardValue hashmap
-        testDeck.printValue();
+        deck.printValue();
     }
 
 }
