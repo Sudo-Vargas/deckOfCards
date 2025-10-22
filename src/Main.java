@@ -32,10 +32,13 @@ public class Main {
 
         System.out.println("Your hand is:");
 
-        // this method prints each card in the hand
+        // for loop to print each card in hand
         for (Card card : hand) {
             System.out.println(card.getRank() + " of " + card.getSuit());
         }
+
+        // test method to print the cardValue hashmap
+        testDeck.printValue();
     }
 
 }
