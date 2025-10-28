@@ -19,4 +19,15 @@ public class Hand {
         hand.add(card);
     }
 
+    public int addScore(){
+        int score = 0;
+
+        for (Card card : hand) {
+
+        }
+
+
+        return score;
+
+    }
 }
