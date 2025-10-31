@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Hand {
 
@@ -19,11 +20,11 @@ public class Hand {
         hand.add(card);
     }
 
-    public int addScore(){
+    public int addScore(Deck deck) {
         int score = 0;
-
+        HashMap<String, Integer> cardValues = deck.getCardValues();
         for (Card card : hand) {
-
+            score += cardValues.get(card.getRank());
         }
 
 

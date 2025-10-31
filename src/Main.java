@@ -16,6 +16,10 @@ public class Main {
 
         //deals the players hand with handSize size
         Hand playerHand = deck.dealHand(2);
+        int totalScore = playerHand.addScore(deck);
+
+        // test method to verify score logic is working
+        // System.out.println(totalScore);
 
         //deals the dealers hand with handSize size
         Hand dealerHand = deck.dealHand(2);

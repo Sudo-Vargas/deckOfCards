@@ -82,4 +82,9 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
+    // getter method for HashMap
+    public HashMap<String, Integer> getCardValues(){
+        return cardValues;
+    }
+
 }
