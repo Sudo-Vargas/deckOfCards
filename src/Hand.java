@@ -22,10 +22,20 @@ public class Hand {
 
     public int addScore(Deck deck) {
         int score = 0;
+        int aceCount = 0;
+
+        for (Card card : hand) {
+            if (card.getRank().equals("Ace")) {
+                aceCount++;
+            }
+        }
+
         HashMap<String, Integer> cardValues = deck.getCardValues();
         for (Card card : hand) {
             score += cardValues.get(card.getRank());
         }
+
+
 
 
         return score;
