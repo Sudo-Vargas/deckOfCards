@@ -8,7 +8,6 @@ import java.util.HashMap;
 // import collections for the shuffle method
 import java.util.Collections;
 
-
 public class Deck {
 
     // arrays to construct deck

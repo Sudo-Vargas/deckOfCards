@@ -1,20 +1,24 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to Blackjack!");
 
         boolean playGame = true;
 
+
         while (playGame) {
 
             // creates a new deck object
             Deck deck = new Deck();
+
+            // creates a new scanner object
+            Scanner scanner = new Scanner(System.in);
 
             // shuffle the deck before dealing the hand
             deck.shuffle();
@@ -46,6 +50,24 @@ public class Main {
             }
 
             System.out.println("the dealer's score is: " + dealerScore);
+
+
+            // players turn logic
+            boolean playerTurn = true;
+            while (playerTurn) {
+                System.out.println("Do you hit or do you stand? (h/s)");
+                String response = scanner.nextLine();
+
+                if (response.equals("h")) {
+
+                    Card card = deck.dealHand(1).getHand().get(0);
+
+
+                    playerHand.getHand();
+                    playerHand.addScore(deck);
+                }
+
+            }
 
 
 
