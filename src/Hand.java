@@ -23,19 +23,23 @@ public class Hand {
     public int addScore(Deck deck) {
         int score = 0;
         int aceCount = 0;
+        HashMap<String, Integer> cardValues = deck.getCardValues();
 
         for (Card card : hand) {
+
             if (card.getRank().equals("Ace")) {
                 aceCount++;
             }
-        }
 
-        HashMap<String, Integer> cardValues = deck.getCardValues();
-        for (Card card : hand) {
             score += cardValues.get(card.getRank());
+
         }
 
 
+        while (score > 21 && aceCount > 0) {
+            aceCount--;
+            score = score - 10;
+        }
 
 
         return score;
