@@ -11,7 +11,6 @@ public class Main {
 
         boolean playGame = true;
 
-
         while (playGame) {
 
             // creates a new deck object
@@ -53,22 +52,66 @@ public class Main {
 
 
             // players turn logic
+
+            // go straight to a game
             boolean playerTurn = true;
+
+            //players turn logic
             while (playerTurn) {
+
+                // asks to hit or stand
                 System.out.println("Do you hit or do you stand? (h/s)");
+
+                // gets user response as a string
                 String response = scanner.nextLine();
 
+                // if loop to handle hits and update score
                 if (response.equals("h")) {
 
-                    Card card = deck.dealHand(1).getHand().get(0);
+                    // gets the card to add to the deck
+                    Card card = deck.dealHand(1).getHand().getFirst();
 
+                    // adds the card we just got
+                    playerHand.addCard(card);
 
-                    playerHand.getHand();
-                    playerHand.addScore(deck);
+                    // updates the players score
+                    playerScore = playerHand.addScore(deck);
+
+                    // print the new score for the player
+                    System.out.println("Your new score is: " + playerScore);
+
+                    // stops the player at 21 if they happen to already be there
+                    if (playerScore == 21) {
+
+                        System.out.println("Your score is " + playerScore + " You stand.");
+
+                        playerTurn = false;
+
+                    }
+
+                    // logic for a bust
+                    if (playerScore > 21) {
+
+                        System.out.println("Bust!");
+
+                        playerTurn = false;
+
+                        playGame = false;
+
+                    }
+
                 }
 
-            }
+                // logic to handle stand response
+                if (response.equals("s")) {
 
+                    System.out.println("You Stand with a score of: " + playerScore);
+
+                    playerTurn = false;
+                }
+
+
+            }
 
 
         }

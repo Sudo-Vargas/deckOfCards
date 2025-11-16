@@ -82,7 +82,7 @@ public class Deck {
     }
 
     // getter method for HashMap
-    public HashMap<String, Integer> getCardValues(){
+    public HashMap<String, Integer> getCardValues() {
         return cardValues;
     }
 
