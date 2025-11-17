@@ -119,50 +119,59 @@ public class Main {
                     dealerTurn = true;
                 }
 
-                // dealers turn
-                while (dealerTurn) {
+            }
 
-                    // draws a card if score is less than 17
-                    if (dealerScore < 17) {
+            // dealers turn
+            while (dealerTurn) {
 
-                        System.out.println("The dealer draws a card");
+                // draws a card if score is less than 17
+                if (dealerScore < 17) {
 
-                        Card card = deck.dealHand(1).getHand().getFirst();
+                    System.out.println("The dealer draws a card");
 
-                        dealerHand.addCard(card);
+                    Card card = deck.dealHand(1).getHand().getFirst();
 
-                        dealerScore = dealerHand.addScore(deck);
+                    dealerHand.addCard(card);
 
-                        // print drawn card
-                        System.out.println(card.getRank() + " of " + card.getSuit());
+                    dealerScore = dealerHand.addScore(deck);
 
-
-                    }
-
-                    // check for bust
-                    if (dealerScore > 21) {
-
-                        System.out.println("The dealer busts");
-
-                        dealerTurn = false;
-
-                    }
-
-                    // stand if 17 or greater
-                    if (dealerScore >= 17 ) {
-
-                        System.out.println("The dealer stands");
-
-                        dealerTurn = false;
-
-                    }
+                    // print drawn card
+                    System.out.println(card.getRank() + " of " + card.getSuit());
 
 
+                }
+
+                // check for bust
+                if (dealerScore > 21) {
+
+                    System.out.println("The dealer busts");
+
+                    dealerTurn = false;
+
+                }
+
+                // stand if 17 or greater
+                if (dealerScore >= 17 ) {
+
+                    System.out.println("The dealer stands");
+
+                    dealerTurn = false;
 
                 }
 
             }
 
+            if (playerScore > 21 && dealerScore < 21) {
+
+                System.out.println("Dealer wins");
+
+            }
+
+            if (playerScore < 21 && dealerScore > 21) {
+
+                System.out.println("Player wins");
+
+            }
 
         }
 
