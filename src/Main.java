@@ -56,6 +56,8 @@ public class Main {
             // go straight to a game
             boolean playerTurn = true;
 
+            boolean dealerTurn = false;
+
             //players turn logic
             while (playerTurn) {
 
@@ -68,7 +70,7 @@ public class Main {
                 // if loop to handle hits and update score
                 if (response.equals("h")) {
 
-                    // gets the card to add to the deck
+                    // gets a card from the deck
                     Card card = deck.dealHand(1).getHand().getFirst();
 
                     // adds the card we just got
@@ -78,7 +80,11 @@ public class Main {
                     playerScore = playerHand.addScore(deck);
 
                     // print the new score for the player
-                    System.out.println("Your new score is: " + playerScore);
+                    // System.out.println("Your new score is: " + playerScore);
+
+                    System.out.println("The dealer gives you a card");
+
+                    System.out.println(card.getRank() + " of " + card.getSuit());
 
                     // stops the player at 21 if they happen to already be there
                     if (playerScore == 21) {
@@ -87,6 +93,7 @@ public class Main {
 
                         playerTurn = false;
 
+                        dealerTurn = true;
                     }
 
                     // logic for a bust
@@ -94,9 +101,9 @@ public class Main {
 
                         System.out.println("Bust!");
 
-                        playerTurn = false;
+                        System.out.println("The dealer wins");
 
-                        playGame = false;
+                        playerTurn = false;
 
                     }
 
@@ -108,8 +115,25 @@ public class Main {
                     System.out.println("You Stand with a score of: " + playerScore);
 
                     playerTurn = false;
+
+                    dealerTurn = true;
                 }
 
+                while (dealerTurn) {
+
+                    if (dealerScore <= 17) {
+
+                        Card card = deck.dealHand(1).getHand().getFirst();
+
+                        dealerHand.addCard(card);
+
+                        dealerScore = dealerHand.addScore(deck);
+
+                    }
+
+                    if (dealerScore )
+
+                }
 
             }
 
