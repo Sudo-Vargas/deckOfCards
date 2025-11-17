@@ -22,11 +22,11 @@ public class Main {
             // shuffle the deck before dealing the hand
             deck.shuffle();
 
-            //deals the players hand with handSize size
+            // deals the players hand with handSize size
             Hand playerHand = deck.dealHand(2);
             int playerScore = playerHand.addScore(deck);
 
-            //deals the dealers hand with handSize size
+            // deals the dealers hand with handSize size
             Hand dealerHand = deck.dealHand(2);
             int dealerScore = dealerHand.addScore(deck);
 
@@ -34,12 +34,13 @@ public class Main {
             ArrayList<Card> phand = playerHand.getHand();
             ArrayList<Card> dhand = dealerHand.getHand();
 
-            // logic to print player hand
+            // print player hand
             System.out.println("Your hand is:");
             for (Card card : phand) {
                 System.out.println(card.getRank() + " of " + card.getSuit());
             }
 
+            // print player score
             System.out.println("the player's score is: " + playerScore);
 
             // logic to print dealer hand
@@ -48,6 +49,7 @@ public class Main {
                 System.out.println(card.getRank() + " of " + card.getSuit());
             }
 
+            // print dealer score
             System.out.println("the dealer's score is: " + dealerScore);
 
 
@@ -96,12 +98,10 @@ public class Main {
                         dealerTurn = true;
                     }
 
-                    // logic for a bust
+                    // check for bust
                     if (playerScore > 21) {
 
                         System.out.println("Bust!");
-
-                        System.out.println("The dealer wins");
 
                         playerTurn = false;
 
@@ -119,9 +119,13 @@ public class Main {
                     dealerTurn = true;
                 }
 
+                // dealers turn
                 while (dealerTurn) {
 
-                    if (dealerScore <= 17) {
+                    // draws a card if score is less than 17
+                    if (dealerScore < 17) {
+
+                        System.out.println("The dealer draws a card");
 
                         Card card = deck.dealHand(1).getHand().getFirst();
 
@@ -129,9 +133,31 @@ public class Main {
 
                         dealerScore = dealerHand.addScore(deck);
 
+                        // print drawn card
+                        System.out.println(card.getRank() + " of " + card.getSuit());
+
+
                     }
 
-                    if (dealerScore )
+                    // check for bust
+                    if (dealerScore > 21) {
+
+                        System.out.println("The dealer busts");
+
+                        dealerTurn = false;
+
+                    }
+
+                    // stand if 17 or greater
+                    if (dealerScore >= 17 ) {
+
+                        System.out.println("The dealer stands");
+
+                        dealerTurn = false;
+
+                    }
+
+
 
                 }
 
