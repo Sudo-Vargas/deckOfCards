@@ -81,12 +81,12 @@ public class Main {
                     // updates the players score
                     playerScore = playerHand.addScore(deck);
 
-                    // print the new score for the player
-                    // System.out.println("Your new score is: " + playerScore);
-
                     System.out.println("The dealer gives you a card");
 
                     System.out.println(card.getRank() + " of " + card.getSuit());
+
+                    // print the new score for the player
+                    System.out.println("Your new score is: " + playerScore);
 
                     // stops the player at 21 if they happen to already be there
                     if (playerScore == 21) {
@@ -142,7 +142,7 @@ public class Main {
                 }
 
                 // check for bust
-                if (dealerScore > 21) {
+                else if (dealerScore > 21) {
 
                     System.out.println("The dealer busts");
 
@@ -151,7 +151,7 @@ public class Main {
                 }
 
                 // stand if 17 or greater
-                if (dealerScore >= 17 ) {
+                else if (dealerScore >= 17 ) {
 
                     System.out.println("The dealer stands");
 
@@ -161,18 +161,51 @@ public class Main {
 
             }
 
-            if (playerScore > 21 && dealerScore < 21) {
+            // bust conditions (again)
+            if (playerScore > 21) {
 
                 System.out.println("Dealer wins");
 
             }
 
-            if (playerScore < 21 && dealerScore > 21) {
+            else if (dealerScore > 21) {
 
                 System.out.println("Player wins");
 
             }
 
+            // compare score after checking for bust
+            else if (playerScore > dealerScore) {
+
+                System.out.println("Player wins");
+
+            }
+
+            else if (playerScore < dealerScore) {
+
+                System.out.println("Dealer wins");
+
+            }
+
+            else if (playerScore == dealerScore) {
+
+                System.out.println("Tie");
+
+            }
+
+
+            // ask to play again
+            System.out.println("Would you like to play again? (y/n)");
+
+            String response = scanner.nextLine();
+
+            if (response.equals("n")) {
+
+                System.out.println("Goodbye");
+
+                playGame = false;
+
+            }
         }
 
     }
